@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ksiazka Gosci</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Ksiazka Gosci</h1>
+
+  <form action="/submit" method="POST">
+    <input type="text" name="name" placeholder="Nazwa" required>
+    <input type="text" name="message" placeholder="Wiadomosc" required>
+    <button type="submit">Wyslij</button>
+  </form>
+
+  <h2>Wiadomosci:</h2>
+  <ul>
+    <% messages.forEach(msg => { %>
+      <li><strong><%= msg.name %>:</strong> <%= msg.message %></li>
+    <% }) %>
+  </ul>
+</body>
+</html>
